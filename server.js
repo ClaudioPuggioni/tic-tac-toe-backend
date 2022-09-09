@@ -7,7 +7,7 @@ const app = express();
 app.use(cors());
 app.use(express.static("public"));
 
-const httpServer = app.listen(process.env.PORT || 8371 || 3333);
+const httpServer = app.listen(parseInt(process.env.PORT) || 3000 || 8371 || 3333);
 
 const io = new Server(httpServer, {
   cors: {
