@@ -7,7 +7,7 @@ const app = express();
 app.use(cors(""));
 app.use(express.static("public"));
 
-const httpServer = app.listen(process.env.PORT || `0.0.0.0:$PORT` || 8371);
+const httpServer = app.listen(process.env.PORT || 8371);
 
 const io = new Server(httpServer, {
   cors: {
