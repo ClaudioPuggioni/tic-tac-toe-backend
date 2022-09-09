@@ -4,7 +4,7 @@ const cors = require("cors");
 const { nanoid } = require("@reduxjs/toolkit");
 
 const app = express();
-app.use(cors(""));
+app.use(cors());
 app.use(express.static("public"));
 
 const httpServer = app.listen(process.env.PORT || 8371 || 3333);
