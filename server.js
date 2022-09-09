@@ -1,13 +1,13 @@
 const express = require("express");
 const { Server } = require("socket.io");
 const cors = require("cors");
-const { nanoid } = require("nanoid");
+const { nanoid } = require("@reduxjs/toolkit");
 
 const app = express();
 app.use(cors(""));
 app.use(express.static("public"));
 
-const httpServer = app.listen(process.env.PORT || 3333);
+const httpServer = app.listen(process.env.PORT || 8371 || 3333);
 
 const io = new Server(httpServer, {
   cors: {
@@ -52,7 +52,6 @@ function randomPlayer() {
   return Math.ceil(Math.random() * 10) % 2 === 0 ? "X" : "O";
 }
 
-// const players = {};
 const rooms = {};
 let startingBoard = new Array(3).fill(0).map((el) => new Array(3).fill(" "));
 
